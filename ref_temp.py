@@ -4,14 +4,12 @@ Pseudocode for temperature conversion
 """
 
 def celsius_calc():
-    global celsius, fahrenheit
     celsius = float(input("Celsius: "))
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
 
 
 def fahrenheit_calc():
-    global fahrenheit, celsius
     fahrenheit = float(input("Fahrenheit: "))
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
@@ -24,11 +22,11 @@ def main():
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "C":
-            celsius_calc()
-            print("Result: {:.2f} F".format(fahrenheit))
+            result = celsius_calc()
+            print("Result: {:.2f} F".format(result))
         elif choice == "F":
-            fahrenheit_calc()
-            print("Result: {:.2f} C".format(celsius))
+            result = fahrenheit_calc()
+            print("Result: {:.2f} C".format(result))
         else:
             print("Invalid option")
         print(MENU)
